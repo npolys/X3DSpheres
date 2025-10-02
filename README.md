@@ -27,4 +27,26 @@ Polys, Nicholas F., et al. "Extensible experiences: fusality for stream and fiel
 
 Polys, Nicholas F., et al. "X3d field trips for remote learning." Proceedings of the 26th International Conference on 3D Web Technology. 2021.
 
+-------------------------------
+
+	Through user studies of our photo and videosphere viewer, we discovered that many non-3D professionals do not use the metaphor of camera control when using a mouse. Instead, they imagine grabbing and dragging the environment (sphere) with their ‘hand’. We have called this camera control technique ‘Reverse TURNTABLE’ because it is based on the experimental navigation type ‘TURNTABLE’, which provides an heading and azimuth, but no roll; we then negated the mapping of x and y mouse position to create a usable navigation for the audience using their metaphor.
+
+
+X3DOM 1.8.3 : in src/nodes/Navigation/modes/TurntableNavigation.js
+Replace
+< alpha = ( dy * 2 * Math.PI ) / view._height;
+< beta = ( dx * 2 * Math.PI ) / view._width;
+
+with
+
+> alpha = ( dy * 2 * Math.PI ) / view._height * navi._vf.speed * -1.0;
+> beta = ( dx * 2 * Math.PI ) / view._width * navi._vf.speed * -1.0;
+
+
+And then rebuild X3DOM!
+
+
+Live mod is here:
+http://metagrid1.sv.vt.edu/~npolys/Web3D/Tools_2025/X3D_Spheres/x3dom/
+
 MIT Licensed.
