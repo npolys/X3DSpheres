@@ -32,8 +32,10 @@ Polys, Nicholas F., et al. "X3d field trips for remote learning." Proceedings of
 	Through user studies of our photo and videosphere viewer, we discovered that many non-3D professionals do not use the metaphor of camera control when using a mouse. Instead, they imagine grabbing and dragging the environment (sphere) with their ‘hand’. We have called this camera control technique ‘Reverse TURNTABLE’ because it is based on the experimental navigation type ‘TURNTABLE’, which provides an heading and azimuth, but no roll; we then negated the mapping of x and y mouse position to create a usable navigation for the audience using their metaphor.
 
 
-X3DOM 1.8.3 : in src/nodes/Navigation/modes/TurntableNavigation.js
+X3DOM 1.8.3 : in src/nodes/Navigation/modes/TurntableNavigation.js :
+
 Replace
+
 < alpha = ( dy * 2 * Math.PI ) / view._height;
 < beta = ( dx * 2 * Math.PI ) / view._width;
 
